@@ -72,9 +72,9 @@ LABEL org.opencontainers.image.licenses=MIT
 WORKDIR /app
 
 COPY --from=build /build/dist .
-RUN mkdir -p /build/resources
-ADD resources /build/resources
-COPY .railwayapp/settings.yaml /build/resources/default-settings.yaml
+
+ADD resources /app/resources
+COPY .railwayapp/settings.yaml /app/.nostr/settings.yaml
 
 RUN npm install --omit=dev --quiet
 
