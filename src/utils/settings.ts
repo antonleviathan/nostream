@@ -77,9 +77,6 @@ export class SettingsStatic {
     debug('creating settings')
 
     const basePath = SettingsStatic.getSettingsFileBasePath()
-    if (!fs.existsSync(basePath)) {
-      fs.mkdirSync(basePath)
-    }
     const defaultsFilePath = SettingsStatic.getDefaultSettingsFilePath()
     const fileType = SettingsStatic.settingsFileType(basePath)
     const settingsFilePath = join(basePath, `settings.${fileType}`)
